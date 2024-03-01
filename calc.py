@@ -1,30 +1,3 @@
-def addition(a , b):
-
-    sum = a + b
-    
-    return sum
-    
-
-
-def subtraction(a , b):
-    sub = a - b
-    return sub
-    
-
-
-def multiplication(a , b):
-    mult = a * b
-    return mult
-
-
-
-def division(a , b):
-    div = a/b
-    return div
-
-
-def grouping(a , b):
-    pass
 """To implement a recursive algorithm to evaluate algebraic expressions in Python, we can follow these steps:
 
     1.Define a function that takes the algebraic expression as input.
@@ -37,22 +10,24 @@ def grouping(a , b):
     7.Ensure error handling for invalid expressions."""
 
 def evaluate_expression(input):
-	  """
-    Evaluates an algebraic expression recursively.
+    """Evaluates an algebraic expression recursively.
     
     Args:
     - input: A string representing the algebraic expression
     
     Returns:
-    - result: An immutable string representing the evaluation result
-    """
-	
-	# Trim leading and trailing whitespace
+    - result: An immutable string representing the evaluation result """
+    
+    # Trim leading and trailing whitespace
     expression = input.strip()
 	
     result = evaluate_subexpression(expression, 0, len(expression))
     
     return result
+   
+   
+
+
 	
 
 def evaluate_subexpression(expression, start, end):
@@ -86,7 +61,7 @@ def evaluate_subexpression(expression, start, end):
         
         # Implement parsing logic for operands, operators, and grouping
         
-      if char.isdigit() or char == '.':
+        if char.isdigit() or char == '.':
             # Append to current operand
             current_operand += char
         elif char in {'+', '-', '*', '/'}:
@@ -120,7 +95,7 @@ def evaluate_subexpression(expression, start, end):
         index += 1
 
     # Handle the last operand and operator
-     operands.append(current_operand)
+    operands.append(current_operand)
      
      
       # Check for invalid expression
