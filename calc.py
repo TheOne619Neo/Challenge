@@ -21,7 +21,7 @@ def evaluate_expression(input):
     # Trim leading and trailing whitespace
     expression = input.strip()
 	
-    result = evaluate_subexpression(expression, 0, len(expression))
+    result = evaluate_subexpression(expression, 0, len(expression))   #store function call
     
     return result
    
@@ -104,7 +104,8 @@ def evaluate_subexpression(expression, start, end):
         raise ValueError("Invalid expression: Missing operand")
 
     # Apply operators according to their precedence
-    for i in range(len(operators)):
+    #for i in range(len(operators)):
+    for i in range(len(operators) - 1, -1, -1):   #change will ensure that the loop iterates over the operators in reverse order
         if operators[i] == '*':
             operands[i] = str(float(operands[i]) * float(operands[i + 1]))
             del operands[i + 1]
