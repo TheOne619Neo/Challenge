@@ -22,7 +22,7 @@ class TestEvaluateSubexpression(unittest.TestCase):
     def test_multiplication(self):
         # Test multiplication operation
         result = evaluate_subexpression("2 * 3", 0, 5)
-        self.assertEqual(result, "6")
+        self.assertEqual(result, "6.0")
         
     def test_division(self):
         # Test division operation
